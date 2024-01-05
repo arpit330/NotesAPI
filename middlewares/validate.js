@@ -1,12 +1,13 @@
 const jwt = require('jsonwebtoken');
 const express = require('express');
 const router = express.Router();
-const jwtSecretKey = "HI BRO";
+const jwtSecretKey = process.env.JWT_SECRET_KEY;
 
 async function ValidateJWTtoken(req, res, next) {
-    if (!req.cookies) {
+    if (!req.cookies.token) {
         console.log('Token Not found');
-        res.redirect('/signup');
+        return res.redirect('/api/auth/signup');
+
     }
     const token = req.cookies.token;
 
@@ -14,11 +15,11 @@ async function ValidateJWTtoken(req, res, next) {
         const decodedResult = await jwt.verify(token, jwtSecretKey);
         console.log(decodedResult);
         req.userId = decodedResult._id;
-        next();
+        return res.redirect('/api/notes');
     }
     catch (err) {
         res.status(401).json({ message: err.message });
-        next();
+        // next();
     }
 
 }

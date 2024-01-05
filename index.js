@@ -40,7 +40,6 @@ db.once('open', () => {
 
 app.get('/', ValidateJWTtoken, async (req, res) => {
     res.send("Hello");
-
 })
 
 

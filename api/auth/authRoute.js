@@ -4,16 +4,20 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const path = require('path');
-const { log } = require('console');
+const ValidateJWTtoken = require('../../middlewares/validate');
 
 const saltRounds = 10;
 
-
-router.get('/', async (req, res) => {
+router.get('/', ValidateJWTtoken, async (req, res) => {
     // res.sendFile(path.join(__dirname, '../public', 'signup.html'));
     res.send("api/auth route");
 })
-
+router.get('/signup', async (req, res) => {
+    res.send("api/auth/signup route");
+})
+router.get('/login', ValidateJWTtoken, async (req, res) => {
+    res.send("api/auth /login route");
+})
 
 
 
