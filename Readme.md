@@ -48,7 +48,7 @@ It includes user authentication using JsonWebToken , rate limiting, request thro
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/notekeeper.git
+   git clone https://github.com/arpit330/NotesAPI
 
 2. Run <code> npm install </code>
 
