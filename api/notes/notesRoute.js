@@ -72,7 +72,7 @@ router.put('/:id', async (req, res) => {
         const updatedNote = await Note.findOneAndUpdate(
             { _id: noteId, owner: userId },
             { title, content },
-            { new: true } // Return the updated document
+            { new: true } 
         );
 
         if (!updatedNote) {
@@ -104,20 +104,17 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-// POST /api/notes/:id/share: Share a note with another user for the authenticated user.
 router.post('/:id/share', async (req, res) => {
     const noteId = req.params.id;
     const { shareWithUserId } = req.body;
 
     try {
-        // Find the note and check if it belongs to the authenticated user
         const noteToShare = await Note.findOne({ _id: noteId, owner: req.userId });
 
         if (!noteToShare) {
             return res.status(404).json({ error: 'Note not found or not owned by the user' });
         }
 
-        // Add the shareWithUserId to the sharedWith array
         noteToShare.sharedWith.push(shareWithUserId);
         await noteToShare.save();
 

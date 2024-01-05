@@ -37,7 +37,6 @@ db.once('open', () => {
 });
 
 
-
 app.get('/', ValidateJWTtoken, async (req, res) => {
     res.send("Hello");
 })
@@ -54,23 +53,3 @@ app.listen(PORT, () => {
 
 
 
-// curl -X GET \
-//      --cookie "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTk1YTE3OTAyNjRmMTFjZTAwZWNjNjAiLCJ1c2VybmFtZSI6ImFycGl0IiwiZW1haWwiOiJhcnBpdEBuc3NuZGZhIiwicGFzc3dvcmQiOiIkMmIkMTAkRVcwNENiWUNpYlhJZkdZQm41cXh2T0xXcWo2a0lTZVdkd1ZLb1NuVWNSZWUyRG1Ga1FONGEiLCJfX3YiOjAsImlhdCI6MTcwNDMwNTI1MX0.oILekVlNvT6Lh4XKVE-BeC8wYnroKwj3-EJwQ5eh2Wc" \
-//      http://localhost:3000/api/notes/
-
-
-// curl -X POST \
-// -H "Content-Type: application/json" \
-// -d '{"title":"first note","content":"new note from arpit"}' \
-// --cookie "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTk1YTE3OTAyNjRmMTFjZTAwZWNjNjAiLCJ1c2VybmFtZSI6ImFycGl0IiwiZW1haWwiOiJhcnBpdEBuc3NuZGZhIiwicGFzc3dvcmQiOiIkMmIkMTAkRVcwNENiWUNpYlhJZkdZQm41cXh2T0xXcWo2a0lTZVdkd1ZLb1NuVWNSZWUyRG1Ga1FONGEiLCJfX3YiOjAsImlhdCI6MTcwNDMwNTI1MX0.oILekVlNvT6Lh4XKVE-BeC8wYnroKwj3-EJwQ5eh2Wc" \
-// http://localhost:3000/api/notes/
-
-// curl -X POST \
-// -H "Content-Type: application/json" \
-// -d '{"username":"arpit","email":"arpit@nssndfa","password":"123asdf"}' \
-// http://localhost:3000/signup
-
-// curl -X POST \
-// -H "Content-Type: application/json" \
-// -d '{"email":"arpit@nssndfa","password":"123asdf"}' \
-// http://localhost:3000/login
