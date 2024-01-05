@@ -5,14 +5,9 @@ A secure and scalable RESTful API for managing and sharing notes. This project i
 ## Table of Contents
 
 - [Project Overview](#project-overview)
-- [Technical Requirements](#technical-requirements)
 - [API Endpoints](#api-endpoints)
-- [Deliverables](#deliverables)
 - [Setup and Installation](#setup-and-installation)
 - [Testing](#testing)
-- [Evaluation Criteria](#evaluation-criteria)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Project Overview
 
@@ -54,3 +49,9 @@ It includes user authentication using JsonWebToken , rate limiting, request thro
 
    ```bash
    git clone https://github.com/yourusername/notekeeper.git
+
+2. Run <code> npm install </code>
+
+3. Run <code> npm run dev </code>
+
+
