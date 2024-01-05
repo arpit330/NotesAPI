@@ -34,7 +34,7 @@ It includes user authentication using JsonWebToken , rate limiting, request thro
 
 
 
-#### Project Details
+### Project Details
 
 - Choice of Framework/DB/3rd Party Tools
   - **Framework:** Express.js was chosen for its simplicity and flexibility.
@@ -43,7 +43,7 @@ It includes user authentication using JsonWebToken , rate limiting, request thro
   - **Rate Limiting/Request Throttling:** Implemented using express-rate-limit middleware.
   - **Search Functionality:** MongoDB text indexing for efficient keyword-based search.
 
-#### Setup and Installation
+### Setup and Installation
 
 1. Clone the repository:
 
@@ -52,6 +52,17 @@ It includes user authentication using JsonWebToken , rate limiting, request thro
 
 2. Run <code> npm install </code>
 
-3. Run <code> npm run dev </code>
+3. Make .env file with <code>PORT</code> , <code>URI</code> , <code>JWT_SECRET_KEY</code> variables
+
+4. Run <code> npm run dev </code>
+
+
+### Run with Docker
+
+1. Clone the repository:
+
+2. Run <code> docker build -t notes-app . </code>
+
+3. RUN <code> docker container run -d notes-app </code>
 
 
